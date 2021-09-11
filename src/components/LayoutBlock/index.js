@@ -1,6 +1,6 @@
 import st from './style.module.css';
 
-const LayoutBlock=({title="This is defult title", descr="This is defult description", urlBg, colorBg='yellow'})=>{
+const LayoutBlock=({title="This is defult title", descr="This is defult description", urlBg, colorBg='yellow', children})=>{
 
 const layoutBg = { backgroundImage: urlBg && `url("${urlBg}")`, backgroundColor: colorBg };
     return(
@@ -11,10 +11,10 @@ const layoutBg = { backgroundImage: urlBg && `url("${urlBg}")`, backgroundColor:
                         {title}
                         <span className={st.separator}></span>
                     </div>
-                    <div className={`${st.desc}, ${st.full}`}>
-                        <p>
-                            {descr}
-                        </p>
+                    <div className={`${st.desc} ${st.full}`}>
+                        
+                            {children}
+                        
                     </div>
                 </article>
             </div>
